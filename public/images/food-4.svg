@@ -1,0 +1,15 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Charcoal grill</title>
+  <desc id="desc">Deep warmth with bold arcs.</desc>
+  <defs>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3b37b" />
+      <stop offset="100%" stop-color="#7b3c2a" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g4)" />
+  <path d="M80 340 C 260 220, 520 210, 720 300 C 940 400, 1080 520, 1180 640" fill="none" stroke="#ffd9b0" stroke-width="28" opacity="0.55" />
+  <circle cx="240" cy="620" r="150" fill="#fff3e2" opacity="0.5" />
+  <rect x="700" y="120" width="380" height="220" rx="36" fill="#3a1d14" opacity="0.35" />
+  <text x="90" y="720" fill="#2a140f" font-family="Arial, sans-serif" font-size="50" font-weight="700">Totalee Halal</text>
+</svg>
