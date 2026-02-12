@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { appLinks } from "@/lib/seo";
 
 type StickyCTAProps = {
-  mode?: "hub" | "app";
+  mode?: "hub" | "list" | "app";
   targetId?: string;
 };
 
@@ -27,16 +27,29 @@ export default function StickyCTA({
   targetId = "restaurants",
 }: StickyCTAProps) {
   const [href, setHref] = useState(
-    mode === "hub" ? `#${targetId}` : appLinks.appStore
+    mode === "hub" || mode === "list" ? `#${targetId}` : appLinks.appStore
   );
 
   useEffect(() => {
-    if (mode === "hub") {
+    if (mode === "hub" || mode === "list") {
       setHref(`#${targetId}`);
       return;
     }
     setHref(getStoreLink());
   }, [mode, targetId]);
+
+  const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (mode !== "list") {
+      return;
+    }
+    if (typeof window === "undefined") {
+      return;
+    }
+    if (window.scrollY < 80) {
+      event.preventDefault();
+      window.location.href = "/go/app";
+    }
+  };
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-50">
@@ -53,11 +66,28 @@ export default function StickyCTA({
             </div>
             <a
               href={href}
+              onClick={handleClick}
               className="inline-flex items-center justify-center rounded-full bg-[color:var(--brand-primary)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[color:var(--brand-secondary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand-ring)]"
             >
               Open Totalee Halal App
             </a>
           </div>
+          {mode === "hub" ? (
+            <div className="mt-3 grid gap-2 sm:grid-cols-2">
+              <a
+                href="/hounslow/deals"
+                className="inline-flex items-center justify-center rounded-full border border-[color:var(--brand-primary)]/15 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-primary)] transition hover:border-transparent hover:bg-white"
+              >
+                See 30% OFF deals
+              </a>
+              <a
+                href="/hounslow/ramadan-deals"
+                className="inline-flex items-center justify-center rounded-full border border-[color:var(--brand-primary)]/15 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-primary)] transition hover:border-transparent hover:bg-white"
+              >
+                See Ramadan deals
+              </a>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

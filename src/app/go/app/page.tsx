@@ -2,20 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import { appLinks } from "@/lib/seo";
 
-export default function GoPage() {
-  const params = useParams();
-  const idParam = params?.id;
-  const id = Array.isArray(idParam) ? idParam[0] : idParam ?? "";
+export default function GoAppPage() {
   const [copied, setCopied] = useState(false);
   const [storeLink, setStoreLink] = useState(appLinks.appStore);
 
   useEffect(() => {
-    if (id) {
-      window.location.href = `totaleehalal://restaurant/${id}`;
-    }
+    window.location.href = "totaleehalal://";
     const ua = navigator.userAgent.toLowerCase();
     if (ua.includes("android")) {
       setStoreLink(appLinks.playStore);
@@ -26,7 +20,7 @@ export default function GoPage() {
       return;
     }
     setStoreLink(appLinks.appStore);
-  }, [id]);
+  }, []);
 
   const handleCopy = async () => {
     try {

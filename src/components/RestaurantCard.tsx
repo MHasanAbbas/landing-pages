@@ -7,6 +7,7 @@ type RestaurantCardProps = {
   area: string;
   src: "hub" | "deals" | "ramadan";
   variant?: "default" | "ramadan";
+  priority?: boolean;
 };
 
 export default function RestaurantCard({
@@ -14,6 +15,7 @@ export default function RestaurantCard({
   area,
   src,
   variant = "default",
+  priority = false,
 }: RestaurantCardProps) {
   const href = `/go/${restaurant.id}?area=${area}&src=${src}&target=${restaurant.slug}`;
   const isRamadan = variant === "ramadan";
@@ -28,10 +30,11 @@ export default function RestaurantCard({
         <div className="relative aspect-[16/9] overflow-hidden sm:aspect-[16/10]">
           <Image
             src={restaurant.image}
-            alt={`${restaurant.name} food`}
+            alt={restaurant.imageAlt}
             fill
             className="object-cover transition duration-500 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 520px"
+            priority={priority}
           />
           <div
             className={`absolute left-3 top-3 rounded-2xl px-3 py-1 text-left shadow-md backdrop-blur sm:left-4 sm:top-4 sm:px-4 sm:py-2 ${

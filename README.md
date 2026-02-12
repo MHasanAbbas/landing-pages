@@ -15,16 +15,27 @@ Build for production:
 npm run build
 ```
 
+## Canonical base
+
+Set the production canonical domain with:
+
+```
+NEXT_PUBLIC_CANONICAL_BASE=https://www.totaleehalal.co.uk
+```
+
+If not set, the app defaults to `https://www.totaleehalal.co.uk`.
+
 ## Pages
 
 - `/hounslow`
 - `/hounslow/deals`
 - `/hounslow/ramadan-deals`
 - `/go/[id]` (deep-link bridge)
+- `/go/app` (generic app open)
 
 ## Edit restaurant data
 
-Update the Hounslow restaurant cards in:
+Update Hounslow restaurants, offers, FAQs, and meta copy in:
 
 ```
 src/data/hounslow.ts
@@ -32,12 +43,19 @@ src/data/hounslow.ts
 
 ## Deep link + fallback setup
 
-The deep link bridge is implemented in:
+Deep link bridge:
 
 ```
 src/app/go/[id]/page.tsx
 ```
 
+Generic app open route:
+
+```
+src/app/go/app/page.tsx
+```
+
 Replace these later with Branch/Appsflyer:
 - `totaleehalal://restaurant/<id>` (current deep link)
+- `totaleehalal://` (generic app open)
 - Store links in `src/lib/seo.ts`

@@ -21,13 +21,14 @@ export default function RestaurantList({
       id={id}
       className="grid scroll-mt-24 gap-4 md:gap-5 md:grid-cols-2"
     >
-      {restaurants.map((restaurant) => (
+      {restaurants.map((restaurant, index) => (
         <RestaurantCard
           key={restaurant.id}
           restaurant={restaurant}
           area={area}
           src={src}
           variant={variant}
+          priority={index === 0}
         />
       ))}
     </div>

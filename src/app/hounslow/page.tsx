@@ -7,17 +7,26 @@ import RestaurantList from "@/components/RestaurantList";
 import StickyCTA from "@/components/StickyCTA";
 import FAQ from "@/components/FAQ";
 import Schema from "@/components/Schema";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import {
   hounslowAiBlurb,
   hounslowDeals,
+  hounslowEntitySummary,
   hounslowFaqs,
   hounslowLocalCopy,
+  hounslowPageMeta,
 } from "@/data/hounslow";
-import { absoluteUrl, appLinks, buildMetadata, ogImagePath } from "@/lib/seo";
+import {
+  absoluteUrl,
+  appLinks,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildMetadata,
+  ogImagePath,
+  sameAsLinks,
+} from "@/lib/seo";
 
-const title = "Halal food delivery in Hounslow";
-const description =
-  "Verified halal-only restaurants & stores in Hounslow. Open and order in seconds with Totalee Halal.";
+const { title, description } = hounslowPageMeta.hub;
 
 export const metadata: Metadata = buildMetadata({
   title,
@@ -58,24 +67,10 @@ const schemaData = [
     url: canonical,
     description,
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: absoluteUrl("/"),
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Hounslow",
-        item: canonical,
-      },
-    ],
-  },
+  buildBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Hounslow", path: "/hounslow" },
+  ]),
   {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -83,10 +78,11 @@ const schemaData = [
     url: canonical,
     description:
       "Totalee Halal is a halal-only food delivery app serving Hounslow, London.",
-    areaServed: "Hounslow, London",
+    areaServed: "Hounslow, West London",
     logo: absoluteUrl(ogImagePath),
-    sameAs: [appLinks.appStore, appLinks.playStore],
+    sameAs: sameAsLinks,
   },
+  buildFaqSchema(hounslowFaqs.hub),
 ];
 
 export default function HounslowHubPage() {
@@ -99,6 +95,13 @@ export default function HounslowHubPage() {
 
       <main className="relative mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 pb-12 sm:px-8">
         <Schema data={schemaData} />
+
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Hounslow" },
+          ]}
+        />
 
         <Hero
           title={title}
@@ -190,6 +193,9 @@ export default function HounslowHubPage() {
           </h2>
           <p className="mt-3 text-sm text-[color:var(--brand-muted)]">
             {hounslowAiBlurb.hub}
+          </p>
+          <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-secondary)]">
+            {hounslowEntitySummary}
           </p>
         </section>
       </main>

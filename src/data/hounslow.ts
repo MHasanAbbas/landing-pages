@@ -10,6 +10,7 @@ export type Restaurant = {
   offerBadge: string;
   offerDetail: string;
   image: string;
+  imageAlt: string;
 };
 
 export type FAQItem = {
@@ -40,6 +41,7 @@ export const hounslowDeals: Restaurant[] = [
     offerBadge: "30% OFF First Order",
     offerDetail: `Save ${GBP}8`,
     image: images[0],
+    imageAlt: "Biryani served with herbs and spices",
   },
   {
     id: "hounslow-hyderabad-house",
@@ -53,6 +55,7 @@ export const hounslowDeals: Restaurant[] = [
     offerBadge: "30% OFF First Order",
     offerDetail: `Save ${GBP}10`,
     image: images[1],
+    imageAlt: "Grilled kebabs on skewers with sides",
   },
   {
     id: "hounslow-kings-darbar",
@@ -66,6 +69,7 @@ export const hounslowDeals: Restaurant[] = [
     offerBadge: "30% OFF First Order",
     offerDetail: `Save ${GBP}7`,
     image: images[2],
+    imageAlt: "Shawarma wrap with salad and sauce",
   },
   {
     id: "hounslow-sahara-grill",
@@ -79,6 +83,7 @@ export const hounslowDeals: Restaurant[] = [
     offerBadge: "30% OFF First Order",
     offerDetail: `Save ${GBP}6`,
     image: images[3],
+    imageAlt: "Mixed grill platter with kebabs and vegetables",
   },
   {
     id: "hounslow-biryani-house",
@@ -92,6 +97,7 @@ export const hounslowDeals: Restaurant[] = [
     offerBadge: "30% OFF First Order",
     offerDetail: `Save ${GBP}9`,
     image: images[4],
+    imageAlt: "Dessert platter with pastries and sweets",
   },
 ];
 
@@ -108,6 +114,7 @@ export const hounslowRamadan: Restaurant[] = [
     offerBadge: "Ramadan Deal",
     offerDetail: `${GBP}19.99 (was ${GBP}24.99)`,
     image: images[0],
+    imageAlt: "Biryani served with herbs and spices",
   },
   {
     id: "hounslow-hyderabad-house-ramadan",
@@ -121,6 +128,7 @@ export const hounslowRamadan: Restaurant[] = [
     offerBadge: "Ramadan Deal",
     offerDetail: `${GBP}39.99 (was ${GBP}46.99)`,
     image: images[1],
+    imageAlt: "Grilled kebabs on skewers with sides",
   },
   {
     id: "hounslow-kings-darbar-ramadan",
@@ -134,6 +142,7 @@ export const hounslowRamadan: Restaurant[] = [
     offerBadge: "Ramadan Deal",
     offerDetail: "BOGO on selected items",
     image: images[2],
+    imageAlt: "Shawarma wrap with salad and sauce",
   },
   {
     id: "hounslow-sahara-grill-ramadan",
@@ -147,6 +156,7 @@ export const hounslowRamadan: Restaurant[] = [
     offerBadge: "Ramadan Deal",
     offerDetail: `${GBP}15.99 (was ${GBP}19.99)`,
     image: images[3],
+    imageAlt: "Mixed grill platter with kebabs and vegetables",
   },
   {
     id: "hounslow-biryani-house-ramadan",
@@ -160,8 +170,27 @@ export const hounslowRamadan: Restaurant[] = [
     offerBadge: "Ramadan Deal",
     offerDetail: `${GBP}22.99 (was ${GBP}28.99)`,
     image: images[4],
+    imageAlt: "Dessert platter with pastries and sweets",
   },
 ];
+
+export const hounslowPageMeta = {
+  hub: {
+    title: "Halal food delivery in Hounslow",
+    description:
+      "Verified halal-only restaurants & stores in Hounslow. Open and order in seconds with Totalee Halal.",
+  },
+  deals: {
+    title: "30% OFF halal in Hounslow",
+    description:
+      "First order discount with verified halal-only restaurants & stores. Tap a restaurant to open in the app.",
+  },
+  ramadan: {
+    title: "Ramadan deals in Hounslow",
+    description:
+      "Family boxes, Iftar combos, and limited-time offers. Tap to open in the app.",
+  },
+};
 
 export const hounslowFaqs = {
   hub: [
@@ -218,7 +247,7 @@ export const hounslowFaqs = {
 };
 
 export const hounslowAiBlurb = {
-  hub: 
+  hub:
     "Totalee Halal is a halal-only food delivery app serving Hounslow and West London. Browse verified halal restaurants and tap to open the restaurant directly in the app. New customers can get 30% off their first order (terms apply).",
   deals:
     "Totalee Halal is a halal-only food delivery app for Hounslow with first-order savings. Tap a verified halal restaurant to open it directly in the app. New customers can get 30% off their first order (terms apply).",
@@ -226,5 +255,8 @@ export const hounslowAiBlurb = {
     "Totalee Halal is a halal-only food delivery app serving Hounslow during Ramadan. Browse verified halal restaurants and open Ramadan bundles directly in the app. Offers are limited time and subject to availability.",
 };
 
+export const hounslowEntitySummary =
+  "Totalee Halal is a halal-only food delivery app for verified halal restaurants, groceries, and fresh meat in London.";
+
 export const hounslowLocalCopy =
-  "Totalee Halal serves Hounslow with verified halal restaurants, groceries, and fresh meat options across West London. Whether you are near Hounslow High Street, close to Heathrow, or commuting through the area, the app keeps ordering simple and halal-only. Explore Pakistani and Hyderabadi favorites, grilled kebabs, and family-friendly biryani packs from local partners. You can open any restaurant directly in the app, see delivery times, and check out quickly. Ideal for families, students, and airport-area locals who want trusted halal meals delivered fast.";
+  "Totalee Halal serves Hounslow with verified halal restaurants, groceries, and fresh meat options across West London. Whether you are near Hounslow High Street, close to Heathrow, or commuting through the area, the app keeps ordering simple and halal-only. Explore Pakistani and Hyderabadi favorites, grilled kebabs, burgers, and family-friendly biryani packs from local partners. You can open any restaurant directly in the app, see delivery times, and check out quickly. It is a reliable option for families, students, and airport-area locals who want trusted halal meals delivered fast. Great for weeknight dinners and weekend family gatherings.";
