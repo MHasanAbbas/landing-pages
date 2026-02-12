@@ -20,11 +20,11 @@ export type FAQItem = {
 const GBP = "\u00a3";
 
 const images = [
-  "/restaurants/food-1.svg",
-  "/restaurants/food-2.svg",
-  "/restaurants/food-3.svg",
-  "/restaurants/food-4.svg",
-  "/restaurants/food-5.svg",
+  "/images/restaurants/biryani.jpg",
+  "/images/restaurants/grilled-kebabs.jpg",
+  "/images/restaurants/shawarma.jpg",
+  "/images/restaurants/mixed-grill.jpg",
+  "/images/restaurants/dessert-platter.jpg",
 ];
 
 export const hounslowDeals: Restaurant[] = [
