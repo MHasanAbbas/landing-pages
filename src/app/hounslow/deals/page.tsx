@@ -4,6 +4,7 @@ import RestaurantList from "@/components/RestaurantList";
 import StickyCTA from "@/components/StickyCTA";
 import FAQ from "@/components/FAQ";
 import Schema from "@/components/Schema";
+import Link from "next/link";
 import {
   hounslowAiBlurb,
   hounslowDeals,
@@ -91,6 +92,16 @@ export default function HounslowDealsPage() {
           area="hounslow"
           src="deals"
         />
+
+        <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-secondary)]">
+          <span>Looking for Ramadan bundles?</span>
+          <Link
+            href="/hounslow/ramadan-deals"
+            className="rounded-full border border-[color:var(--brand-primary)]/15 bg-white/80 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-primary)] transition hover:border-transparent hover:bg-white"
+          >
+            See Ramadan deals
+          </Link>
+        </div>
 
         <FAQ title="Deals FAQs" items={hounslowFaqs.deals} />
 
