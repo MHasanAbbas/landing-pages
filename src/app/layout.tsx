@@ -1,38 +1,32 @@
-﻿import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const manrope = Manrope({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
 });
 
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   title: {
-    default: "Totalee Halal | Hounslow Deals",
+    default: "Totalee Halal",
     template: "%s | Totalee Halal",
   },
   description:
-    "Exclusive halal food deals in Hounslow. Open the restaurant in the app to claim 30% OFF.",
-  metadataBase: new URL("https://example.com"),
+    "Halal-only food delivery with verified halal restaurants and stores across London.",
+  metadataBase: new URL("https://totaleehalal.co.uk"),
   openGraph: {
-    title: "Totalee Halal | Hounslow Deals",
+    title: "Totalee Halal",
     description:
-      "Exclusive halal food deals in Hounslow. Open the restaurant in the app to claim 30% OFF.",
+      "Halal-only food delivery with verified halal restaurants and stores across London.",
     images: ["/brand/totalee-mockup.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Totalee Halal | Hounslow Deals",
+    title: "Totalee Halal",
     description:
-      "Exclusive halal food deals in Hounslow. Open the restaurant in the app to claim 30% OFF.",
+      "Halal-only food delivery with verified halal restaurants and stores across London.",
     images: ["/brand/totalee-mockup.png"],
   },
 };
@@ -44,9 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${fraunces.variable} antialiased`}>
-        {children}
-      </body>
+      <body className={`${inter.variable} antialiased`}>{children}</body>
     </html>
   );
 }

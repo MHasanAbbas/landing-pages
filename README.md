@@ -1,26 +1,33 @@
-# Totalee Halal Hounslow Deals Landing
+# Totalee Halal Hounslow Landing
 
-Premium, offer-first landing page for Hounslow deals that routes users into the Totalee Halal app.
+Premium, offer-first landing pages for Hounslow that route users into the Totalee Halal app.
 
 ## Run locally
 
 ```bash
-pnpm install
-pnpm dev
+npm install
+npm run dev
 ```
 
 Build for production:
 
 ```bash
-pnpm build
+npm run build
 ```
+
+## Pages
+
+- `/hounslow`
+- `/hounslow/deals`
+- `/hounslow/ramadan-deals`
+- `/go/[id]` (deep-link bridge)
 
 ## Edit restaurant data
 
-Update the Hounslow deal cards in:
+Update the Hounslow restaurant cards in:
 
 ```
-src/data/hounslow-deals.ts
+src/data/hounslow.ts
 ```
 
 ## Deep link + fallback setup
@@ -33,10 +40,4 @@ src/app/go/[id]/page.tsx
 
 Replace these later with Branch/Appsflyer:
 - `totaleehalal://restaurant/<id>` (current deep link)
-- `https://example.com/app-download` (fallback download link)
-
-You can also update the CTA link on the landing page here:
-
-```
-src/app/hounslow-deals/page.tsx
-```
+- Store links in `src/lib/seo.ts`

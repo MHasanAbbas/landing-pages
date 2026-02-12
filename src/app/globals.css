@@ -1,27 +1,28 @@
 ﻿@import "tailwindcss";
 
 :root {
-  --background: #f6f1e8;
-  --foreground: #101814;
-  --card: #ffffff;
-  --muted: #516158;
-  --accent: #c9972b;
-  --accent-2: #0f2f24;
-  --accent-3: #6d7b5b;
-  --ring: rgba(199, 151, 43, 0.35);
+  --brand-bg: #f7f2e8;
+  --brand-ink: #101c16;
+  --brand-primary: #0f2f24;
+  --brand-secondary: #6b7b5a;
+  --brand-card: #ffffff;
+  --brand-muted: #4e5b53;
+  --brand-amber: #c9972b;
+  --brand-amber-soft: rgba(201, 151, 43, 0.2);
+  --brand-ring: rgba(15, 47, 36, 0.3);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-muted: var(--muted);
-  --color-accent: var(--accent);
-  --color-accent-2: var(--accent-2);
-  --color-accent-3: var(--accent-3);
-  --color-ring: var(--ring);
+  --color-background: var(--brand-bg);
+  --color-foreground: var(--brand-ink);
+  --color-card: var(--brand-card);
+  --color-muted: var(--brand-muted);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-amber: var(--brand-amber);
+  --color-brand-amber-soft: var(--brand-amber-soft);
+  --color-ring: var(--brand-ring);
   --font-sans: var(--font-body);
-  --font-display: var(--font-display);
 }
 
 * {
@@ -35,18 +36,11 @@ html {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(1200px 520px at 12% -10%, rgba(199, 151, 43, 0.18), transparent 60%),
-    radial-gradient(900px 420px at 95% 0%, rgba(15, 47, 36, 0.2), transparent 55%),
-    #f6f1e8;
-  color: var(--foreground);
+    radial-gradient(1100px 520px at 8% -10%, rgba(15, 47, 36, 0.18), transparent 60%),
+    radial-gradient(900px 420px at 100% 0%, rgba(107, 123, 90, 0.2), transparent 55%),
+    var(--brand-bg);
+  color: var(--brand-ink);
   font-family: var(--font-body), "Segoe UI", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-display), "Times New Roman", serif;
 }
 
 img {

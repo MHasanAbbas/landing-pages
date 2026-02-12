@@ -1,16 +1,49 @@
-﻿import Link from "next/link";
+"use client";
+
+import { useEffect, useState } from "react";
+import { appLinks } from "@/lib/seo";
+
+function getStoreLink() {
+  if (typeof navigator === "undefined") {
+    return appLinks.appStore;
+  }
+  const ua = navigator.userAgent.toLowerCase();
+  if (ua.includes("android")) {
+    return appLinks.playStore;
+  }
+  if (ua.includes("iphone") || ua.includes("ipad") || ua.includes("ipod")) {
+    return appLinks.appStore;
+  }
+  return appLinks.appStore;
+}
 
 export default function StickyCTA() {
+  const [href, setHref] = useState(appLinks.appStore);
+
+  useEffect(() => {
+    setHref(getStoreLink());
+  }, []);
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-50">
-      <div className="mx-auto flex max-w-2xl px-4 pb-4">
-        <div className="w-full rounded-2xl border border-white/70 bg-white/80 p-3 shadow-[0_18px_45px_-20px_rgba(20,32,27,0.7)] backdrop-blur">
-          <Link
-            href="https://example.com/app-download"
-            className="flex w-full items-center justify-center rounded-xl bg-[#14201b] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#0f8b6a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d9822b]"
-          >
-            Open Totalee Halal App
-          </Link>
+      <div className="mx-auto flex w-full max-w-6xl px-5 pb-4 sm:px-8">
+        <div className="w-full rounded-2xl border border-white/70 bg-white/90 p-3 shadow-[0_18px_45px_-20px_rgba(15,47,36,0.65)] backdrop-blur">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-secondary)]">
+                30% OFF first order
+              </p>
+              <p className="text-sm font-semibold text-[color:var(--brand-ink)]">
+                Open Totalee Halal App
+              </p>
+            </div>
+            <a
+              href={href}
+              className="inline-flex items-center justify-center rounded-full bg-[color:var(--brand-primary)] px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[color:var(--brand-secondary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand-ring)]"
+            >
+              Open Totalee Halal App
+            </a>
+          </div>
         </div>
       </div>
     </div>
