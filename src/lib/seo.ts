@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
 export const siteName = "Totalee Halal";
-export const siteUrl = "https://totaleehalal.co.uk";
+const canonicalBase =
+  process.env.NEXT_PUBLIC_CANONICAL_BASE ??
+  "https://www.totaleehalal.co.uk";
+export const siteUrl = canonicalBase.replace(/\/$/, "");
 export const ogImagePath = "/brand/totalee-mockup.png";
 
 export const appLinks = {
@@ -23,17 +26,18 @@ export function buildMetadata({ title, description, path }: BuildMetaProps) {
     height: 768,
     alt: "Totalee Halal app preview",
   };
+  const canonical = absoluteUrl(path);
 
   const metadata: Metadata = {
     title,
     description,
     alternates: {
-      canonical: path,
+      canonical,
     },
     openGraph: {
       title,
       description,
-      url: path,
+      url: canonical,
       siteName,
       type: "website",
       images: [image],
@@ -50,5 +54,6 @@ export function buildMetadata({ title, description, path }: BuildMetaProps) {
 }
 
 export function absoluteUrl(path: string) {
-  return new URL(path, siteUrl).toString();
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  return `${siteUrl}${normalizedPath}`;
 }

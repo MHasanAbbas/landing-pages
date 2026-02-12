@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { siteUrl } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   },
   description:
     "Halal-only food delivery with verified halal restaurants and stores across London.",
-  metadataBase: new URL("https://totaleehalal.co.uk"),
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: "Totalee Halal",
     description:

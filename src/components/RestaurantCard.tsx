@@ -15,7 +15,7 @@ export default function RestaurantCard({
   src,
   variant = "default",
 }: RestaurantCardProps) {
-  const href = `/go/${restaurant.id}?src=${src}&area=${area}`;
+  const href = `/go/${restaurant.id}?area=${area}&src=${src}&target=${restaurant.slug}`;
   const isRamadan = variant === "ramadan";
 
   return (
@@ -24,7 +24,7 @@ export default function RestaurantCard({
       aria-label={`Order ${restaurant.name} in the Totalee Halal app`}
       className="group block focus-visible:outline-none"
     >
-      <article className="overflow-hidden rounded-3xl border border-white/80 bg-white shadow-[0_18px_45px_-28px_rgba(15,47,36,0.55)] transition hover:-translate-y-0.5 hover:shadow-[0_26px_60px_-26px_rgba(15,47,36,0.65)] focus-visible:ring-2 focus-visible:ring-[color:var(--brand-ring)]">
+      <article className="overflow-hidden rounded-3xl border border-white/80 bg-white shadow-[0_16px_40px_-28px_rgba(15,47,36,0.55)] transition hover:-translate-y-0.5 hover:shadow-[0_22px_50px_-24px_rgba(15,47,36,0.65)] focus-visible:ring-2 focus-visible:ring-[color:var(--brand-ring)]">
         <div className="relative aspect-[16/10] overflow-hidden">
           <Image
             src={restaurant.image}
@@ -36,14 +36,14 @@ export default function RestaurantCard({
           <div
             className={`absolute left-4 top-4 rounded-2xl px-4 py-2 text-left shadow-md backdrop-blur ${
               isRamadan
-                ? "bg-[color:var(--brand-amber)]/85 text-[#1f1605]"
-                : "bg-white/90 text-[color:var(--brand-primary)]"
+                ? "bg-[color:var(--brand-amber)]/90 text-[#1f1605]"
+                : "bg-white/95 text-[color:var(--brand-primary)]"
             }`}
           >
             <p className="text-xs font-semibold uppercase tracking-[0.18em]">
-              {restaurant.offerTitle}
+              {restaurant.offerBadge}
             </p>
-            <p className="text-sm font-semibold">{restaurant.offerSubtitle}</p>
+            <p className="text-sm font-semibold">{restaurant.offerDetail}</p>
           </div>
         </div>
         <div className="p-5">
@@ -64,7 +64,7 @@ export default function RestaurantCard({
               </div>
             </div>
             <span className="rounded-full bg-[color:var(--brand-bg)] px-3 py-1 text-xs font-semibold text-[color:var(--brand-ink)]">
-              {restaurant.rating} star
+              {restaurant.rating} rating
             </span>
           </div>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs font-medium text-[color:var(--brand-muted)]">
