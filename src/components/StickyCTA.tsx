@@ -40,8 +40,8 @@ export default function StickyCTA({
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-50">
-      <div className="mx-auto flex w-full max-w-6xl px-5 pb-4 sm:px-8">
-        <div className="w-full rounded-2xl border border-white/70 bg-white/92 p-3 shadow-[0_18px_45px_-20px_rgba(15,47,36,0.65)] backdrop-blur">
+      <div className="mx-auto flex w-full max-w-6xl px-4 pb-3 sm:px-8 sm:pb-4">
+        <div className="w-full rounded-2xl border border-white/70 bg-[linear-gradient(135deg,_rgba(255,255,255,0.96)_0%,_rgba(247,242,232,0.92)_100%)] p-3 shadow-[0_20px_50px_-22px_rgba(15,47,36,0.65)] backdrop-blur">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-secondary)]">

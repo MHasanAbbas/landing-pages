@@ -17,7 +17,10 @@ export default function RestaurantList({
   variant,
 }: RestaurantListProps) {
   return (
-    <div id={id} className="grid gap-5 md:grid-cols-2">
+    <div
+      id={id}
+      className="grid scroll-mt-24 gap-4 md:gap-5 md:grid-cols-2"
+    >
       {restaurants.map((restaurant) => (
         <RestaurantCard
           key={restaurant.id}

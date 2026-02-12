@@ -17,9 +17,9 @@ export default function BrandHeader({
 
   return (
     <header
-      className={`mx-auto flex w-full max-w-6xl flex-col gap-3 px-5 sm:px-8 ${
+      className={`mx-auto flex w-full max-w-6xl flex-col gap-2 px-5 sm:px-8 ${
         isCompact
-          ? "pb-2 pt-4 sm:flex-row sm:items-center sm:justify-between"
+          ? "pb-2 pt-3 sm:flex-row sm:items-center sm:justify-between"
           : "pb-3 pt-6"
       }`}
     >

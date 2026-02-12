@@ -30,8 +30,10 @@ export default function Hero({
   children,
 }: HeroProps) {
   return (
-    <section className="grid items-center gap-10 rounded-[32px] border border-white/70 bg-white/70 p-6 shadow-[0_28px_70px_-40px_rgba(15,47,36,0.6)] backdrop-blur sm:p-8 lg:grid-cols-[1.05fr_0.95fr]">
-      <div className="flex flex-col gap-5">
+    <section className="relative grid items-center gap-10 overflow-hidden rounded-[32px] border border-white/70 bg-[linear-gradient(135deg,_rgba(255,255,255,0.96)_0%,_rgba(255,255,255,0.88)_45%,_rgba(247,242,232,0.92)_100%)] p-6 shadow-[0_30px_80px_-42px_rgba(15,47,36,0.55)] backdrop-blur sm:p-8 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-[radial-gradient(circle_at_center,_rgba(107,123,90,0.28),_transparent_70%)]" />
+      <div className="pointer-events-none absolute -left-24 bottom-0 h-48 w-48 rounded-full bg-[radial-gradient(circle_at_center,_rgba(15,47,36,0.18),_transparent_70%)]" />
+      <div className="relative z-10 flex flex-col gap-5">
         <div className="flex flex-wrap items-center gap-3">
           {eyebrow ? (
             <span className="text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--brand-secondary)]">
@@ -85,7 +87,7 @@ export default function Hero({
         {children}
       </div>
       {image ? (
-        <div className="relative">
+        <div className="relative z-10">
           <div className="absolute -left-4 -top-4 h-full w-full rounded-[28px] border border-[color:var(--brand-primary)]/10 bg-white/60" />
           <div className="relative overflow-hidden rounded-[28px] border border-white/70 bg-white/80 p-4 shadow-[0_24px_60px_-32px_rgba(15,47,36,0.65)]">
             <Image

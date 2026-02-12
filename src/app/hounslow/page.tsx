@@ -97,7 +97,7 @@ export default function HounslowHubPage() {
 
       <BrandHeader pageLabel="Hounslow" />
 
-      <main className="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-5 pb-12 sm:px-8">
+      <main className="relative mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 pb-12 sm:px-8">
         <Schema data={schemaData} />
 
         <Hero
@@ -173,7 +173,7 @@ export default function HounslowHubPage() {
           />
         </section>
 
-        <section className="rounded-3xl border border-white/70 bg-white/75 p-6 shadow-[0_18px_45px_-30px_rgba(15,47,36,0.55)] backdrop-blur">
+        <section className="rounded-3xl border border-white/70 bg-[linear-gradient(135deg,_rgba(255,255,255,0.96)_0%,_rgba(255,255,255,0.86)_60%,_rgba(247,242,232,0.92)_100%)] p-6 shadow-[0_20px_50px_-32px_rgba(15,47,36,0.58)] backdrop-blur">
           <h2 className="text-2xl font-semibold text-[color:var(--brand-ink)]">
             Ordering halal food in Hounslow
           </h2>
@@ -184,7 +184,7 @@ export default function HounslowHubPage() {
 
         <FAQ title="Hounslow FAQs" items={hounslowFaqs.hub} />
 
-        <section className="rounded-3xl border border-white/70 bg-white/80 p-6 shadow-[0_18px_45px_-30px_rgba(15,47,36,0.55)] backdrop-blur">
+        <section className="rounded-3xl border border-white/70 bg-[linear-gradient(135deg,_rgba(255,255,255,0.97)_0%,_rgba(255,255,255,0.88)_60%,_rgba(247,242,232,0.94)_100%)] p-6 shadow-[0_20px_50px_-32px_rgba(15,47,36,0.58)] backdrop-blur">
           <h2 className="text-2xl font-semibold text-[color:var(--brand-ink)]">
             Totalee Halal in Hounslow
           </h2>

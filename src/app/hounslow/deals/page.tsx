@@ -67,20 +67,20 @@ export default function HounslowDealsPage() {
 
       <BrandHeader pageLabel="Hounslow deals" variant="compact" showNav={false} />
 
-      <main className="relative mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 pb-12 sm:px-8">
+      <main className="relative mx-auto flex w-full max-w-6xl flex-col gap-4 px-5 pb-12 sm:px-8">
         <Schema data={[itemList, faqSchema]} />
 
-        <section className="flex flex-col gap-3">
-          <h1 className="text-3xl font-semibold text-[color:var(--brand-ink)]">
+        <section className="flex flex-col gap-2">
+          <h1 className="text-2xl font-semibold leading-tight text-[color:var(--brand-ink)] sm:text-3xl">
             30% OFF halal in Hounslow
           </h1>
-          <div className="flex flex-wrap items-center gap-2 text-sm text-[color:var(--brand-muted)]">
+          <div className="flex flex-wrap items-center gap-2 text-xs text-[color:var(--brand-muted)] sm:text-sm">
             <span className="rounded-full border border-[color:var(--brand-primary)]/15 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-primary)]">
               Limited time
             </span>
             <span>Tap a restaurant to open in the app.</span>
           </div>
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-secondary)]">
+          <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-secondary)] sm:text-xs">
             Popular in Hounslow today &bull; Verified halal-only &bull; One-tap order
           </div>
         </section>
@@ -94,7 +94,7 @@ export default function HounslowDealsPage() {
 
         <FAQ title="Deals FAQs" items={hounslowFaqs.deals} />
 
-        <section className="rounded-3xl border border-white/70 bg-white/80 p-6 shadow-[0_18px_45px_-30px_rgba(15,47,36,0.55)] backdrop-blur">
+        <section className="rounded-3xl border border-white/70 bg-[linear-gradient(135deg,_rgba(255,255,255,0.97)_0%,_rgba(255,255,255,0.88)_60%,_rgba(247,242,232,0.94)_100%)] p-6 shadow-[0_20px_50px_-32px_rgba(15,47,36,0.58)] backdrop-blur">
           <h2 className="text-2xl font-semibold text-[color:var(--brand-ink)]">
             Totalee Halal in Hounslow
           </h2>
